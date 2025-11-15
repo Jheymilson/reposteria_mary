@@ -21,7 +21,7 @@
             --color-texto: #333;
             --color-texto-claro: #fff;
             --color-acento: #ffc107; /* Amarillo dorado */
-            --navbar-height: 90px; /* Altura base de la barra fija */
+            --navbar-height: 70px; /* Altura base de la barra fija */
         }
 
         /* --- Estilos Generales --- */
@@ -79,7 +79,7 @@
         /* --- Barra de Navegación (Header) --- */
         .navbar {
             background: var(--color-texto-claro);
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             min-height: var(--navbar-height);
             position: fixed;
             width: 100%;
@@ -109,12 +109,17 @@
             display: block;
         }
 
+        .navbar nav {
+            display: flex;
+            align-items: center;
+        }
+
         .navbar nav a {
             color: var(--color-texto);
             text-decoration: none;
-            margin-left: 1.5rem;
             font-weight: 400;
             transition: color 0.3s ease;
+            padding: 0 0.35rem;
         }
 
         .navbar nav a:hover {
@@ -415,7 +420,7 @@
             .video-gallery { grid-template-columns: 1fr; }
             
             :root {
-                --navbar-height: 120px;
+                --navbar-height: 100px;
             }
 
             /* --- Diseño Móvil con altura controlada --- */
@@ -435,12 +440,21 @@
                 max-height: 55px; /* Logo ajustado para móvil */
             }
             .navbar nav { 
-                display: flex; 
-                justify-content: center; 
+                display: flex;
+                justify-content: flex-start;
                 width: 100%;
+                gap: 1.5rem;
+                overflow-x: auto;
+                padding: 0 0.75rem 0.6rem;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
             }
+            .navbar nav::-webkit-scrollbar { display: none; }
             .navbar nav a { 
-                margin: 0 1rem; 
+                margin: 0;
+                font-size: 1rem;
+                padding-bottom: 0.15rem;
+                flex: 0 0 auto;
             }
 
             .contact-wrapper {
