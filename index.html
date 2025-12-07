@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -254,18 +254,17 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%;
+            aspect-ratio: 9/16; /* Formato vertical */
             overflow: hidden;
             border-radius: 12px;
             background: #000;
         }
 
         .video-wrapper video {
-            position: absolute;
-            inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            display: block;
         }
 
         .video-card h3 {
@@ -490,7 +489,7 @@
     <header class="navbar">
         <div class="container">
             <a href="#inicio" class="logo">
-                <img src="imagenes/logo.png" alt="Logo de Repostería Mary">
+                <img loading="lazy" src="imagenes/logo.png" alt="Logo de Repostería Mary">
             </a>
             <nav>
                 <a href="#inicio">Inicio</a>
@@ -517,50 +516,23 @@
                 <div class="cakes-grid">
                     <!-- Torta 1 -->
                     <div class="cake-card">
-                        <img src="imagenes/matrimonio/torta1.png" alt="Torta Especial 1">
+                        <img loading="lazy" src="imagenes/matrimonio/torta1.png" alt="Matrimonio 1">
                         <div class="card-content">
-                            <h3>Nombre de la Torta 1</h3>
-                            <p>Aquí va una deliciosa descripción de tu primera torta, destacando sus ingredientes y sabor único.</p>
+                            <h3>Matrimonio 1</h3>
                         </div>
                     </div>
                     <!-- Torta 2 -->
                     <div class="cake-card">
-                        <img src="imagenes/matrimonio/torta2.jpg" alt="Torta Especial 2">
+                        <img loading="lazy" src="imagenes/matrimonio/torta2.jpg" alt="Matrimonio 2">
                         <div class="card-content">
-                            <h3>Nombre de la Torta 2</h3>
-                            <p>Describe esta maravillosa creación. ¿Es de chocolate, vainilla, frutas? ¡Haz que la la gente se antoje!</p>
+                            <h3>Matrimonio 2</h3>
                         </div>
                     </div>
                     <!-- Torta 3 -->
                     <div class="cake-card">
-                        <img src="imagenes/matrimonio/torta3.jpg" alt="Torta Especial 3">
+                        <img loading="lazy" src="imagenes/matrimonio/torta3.jpg" alt="Matrimonio 3">
                         <div class="card-content">
-                            <h3>Nombre de la Torta 3</h3>
-                            <p>Un espacio perfecto para contar los secretos de esta torta y por qué es una de las favoritas de tus clientes.</p>
-                        </div>
-                    </div>
-                    <!-- Torta 4 -->
-                    <div class="cake-card">
-                        <img src="imagenes/matrimonio/torta4.jpg" alt="Torta Especial 4">
-                        <div class="card-content">
-                            <h3>Nombre de la Torta 4</h3>
-                            <p>Detalla los sabores y texturas que hacen de esta torta una experiencia inolvidable.</p>
-                        </div>
-                    </div>
-                    <!-- Torta 5 -->
-                    <div class="cake-card">
-                        <img src="imagenes/matrimonio/torta5.jpg" alt="Torta Especial 5">
-                        <div class="card-content">
-                            <h3>Nombre de la Torta 5</h3>
-                            <p>¿Ideal para qué ocasión? Describe su esencia y por qué es la elección perfecta para celebrar.</p>
-                        </div>
-                    </div>
-                    <!-- Torta 6 -->
-                    <div class="cake-card">
-                        <img src="imagenes/matrimonio/torta6.jpg" alt="Torta Especial 6">
-                        <div class="card-content">
-                            <h3>Nombre de la Torta 6</h3>
-                            <p>Cierra con broche de oro describiendo esta última obra de arte de la Repostería Mary.</p>
+                            <h3>Matrimonio 3</h3>
                         </div>
                     </div>
                 </div>
@@ -572,26 +544,196 @@
             <div class="container anchor-target" id="bautizo">
                 <h2>Tortas para Bautizo</h2>
                 <div class="cakes-grid">
+                    <!-- Torta 1 -->
                     <div class="cake-card">
-                        <img src="imagenes/bautizo/torta1.jpg" alt="Torta de Bautizo 1">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_184936.jpg" alt="Bautizo 1">
                         <div class="card-content">
-                            <h3>Dulce Bautizo Clásico</h3>
-                            <p>Bizcochuelo suave relleno de crema de vainilla y frutos rojos, decorado con detalles elegantes para el gran día.</p>
+                            <h3>Bautizo 1</h3>
                         </div>
                     </div>
+                    <!-- Torta 2 -->
                     <div class="cake-card">
-                        <img src="imagenes/bautizo/torta2.jpg" alt="Torta de Bautizo 2">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_184939.jpg" alt="Bautizo 2">
                         <div class="card-content">
-                            <h3>Celebra con Chocolate</h3>
-                            <p>Capas de chocolate belga y mousse de coco para una experiencia dulce y memorable.</p>
+                            <h3>Bautizo 2</h3>
                         </div>
                     </div>
+                    <!-- Torta 3 -->
                     <div class="cake-card">
-                        <img src="imagenes/bautizo/torta3.jpg" alt="Torta de Bautizo 3">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_184941.jpg" alt="Bautizo 3">
                         <div class="card-content">
-                            <h3>Aroma de Citrus</h3>
-                            <p>Delicada combinación de limón y merengue italiano que encanta a pequeños y grandes.</p>
+                            <h3>Bautizo 3</h3>
                         </div>
+                    </div>
+                    <!-- Torta 4 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185046.jpg" alt="Bautizo 4">
+                        <div class="card-content">
+                            <h3>Bautizo 4</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 5 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185048.jpg" alt="Bautizo 5">
+                        <div class="card-content">
+                            <h3>Bautizo 5</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 6 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185050.jpg" alt="Bautizo 6">
+                        <div class="card-content">
+                            <h3>Bautizo 6</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 7 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185059.jpg" alt="Bautizo 7">
+                        <div class="card-content">
+                            <h3>Bautizo 7</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 8 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185103.jpg" alt="Bautizo 8">
+                        <div class="card-content">
+                            <h3>Bautizo 8</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 9 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185130.jpg" alt="Bautizo 9">
+                        <div class="card-content">
+                            <h3>Bautizo 9</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 10 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185131.jpg" alt="Bautizo 10">
+                        <div class="card-content">
+                            <h3>Bautizo 10</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 11 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185133.jpg" alt="Bautizo 11">
+                        <div class="card-content">
+                            <h3>Bautizo 11</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 13 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_185135.jpg" alt="Bautizo 13">
+                        <div class="card-content">
+                            <h3>Bautizo 13</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 15 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192742.jpg" alt="Bautizo 15">
+                        <div class="card-content">
+                            <h3>Bautizo 15</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 16 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192754.jpg" alt="Bautizo 16">
+                        <div class="card-content">
+                            <h3>Bautizo 16</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 17 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192755.jpg" alt="Bautizo 17">
+                        <div class="card-content">
+                            <h3>Bautizo 17</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 18 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192756.jpg" alt="Bautizo 18">
+                        <div class="card-content">
+                            <h3>Bautizo 18</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 19 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192831.jpg" alt="Bautizo 19">
+                        <div class="card-content">
+                            <h3>Bautizo 19</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 21 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192838.jpg" alt="Bautizo 21">
+                        <div class="card-content">
+                            <h3>Bautizo 21</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 22 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192900.jpg" alt="Bautizo 22">
+                        <div class="card-content">
+                            <h3>Bautizo 22</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 23 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192908.jpg" alt="Bautizo 23">
+                        <div class="card-content">
+                            <h3>Bautizo 23</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 24 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/IMG_20251129_192920.jpg" alt="Bautizo 24">
+                        <div class="card-content">
+                            <h3>Bautizo 24</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 25 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/SHA_20251129_185159947_8.4.400.jpg" alt="Bautizo 25">
+                        <div class="card-content">
+                            <h3>Bautizo 25</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 26 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/SHA_20251129_185209029_8.4.400.jpg" alt="Bautizo 26">
+                        <div class="card-content">
+                            <h3>Bautizo 26</h3>
+                        </div>
+                    </div>
+                    <!-- Torta 27 -->
+                    <div class="cake-card">
+                        <img loading="lazy" src="imagenes/bautizo/SHA_20251129_192812170_8.4.400.jpg" alt="Bautizo 27">
+                        <div class="card-content">
+                            <h3>Bautizo 27</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Videos de Bautizo -->
+                <h2 style="margin-top: 3rem;">Videos de Bautizo</h2>
+                <div class="video-gallery">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls controlsList="nofullscreen" preload="metadata">
+                                <source src="imagenes/bautizo/VID_20251129_185300.mp4" type="video/mp4">
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                        </div>
+                        <h3>Video 1</h3>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls controlsList="nofullscreen" preload="metadata">
+                                <source src="imagenes/bautizo/VID_20251129_192947.mp4" type="video/mp4">
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                        </div>
+                        <h3>Video 2</h3>
                     </div>
                 </div>
             </div>
@@ -601,27 +743,24 @@
         <section id="videos-section">
             <div class="container anchor-target" id="videos">
                 <h2>Vive la Experiencia</h2>
-                <p class="section-description">Observa c&oacute;mo cuidamos cada detalle y comparte estos clips con tus clientes antes de realizar un pedido.</p>
                 <div class="video-gallery">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <video controls preload="metadata">
+                            <video controls controlsList="nofullscreen" preload="metadata">
                                 <source src="imagenes/videos/video1.mp4" type="video/mp4">
                                 Tu navegador no soporta video HTML5.
                             </video>
                         </div>
-                        <h3>Decoración Artesanal</h3>
-                        <p>Una mirada al proceso de ba&ntilde;ar, rellenar y decorar cada torta con detalles hechos a mano.</p>
+                        <h3>Video 1</h3>
                     </div>
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <video controls preload="metadata">
+                            <video controls controlsList="nofullscreen" preload="metadata">
                                 <source src="imagenes/videos/video2.mp4" type="video/mp4">
                                 Tu navegador no soporta video HTML5.
                             </video>
                         </div>
-                        <h3>Degustación y Entrega</h3>
-                        <p>Muestra c&oacute;mo presentamos las tortas terminadas y las entregamos listas para celebrar.</p>
+                        <h3>Video 2</h3>
                     </div>
                 </div>
             </div>
@@ -654,7 +793,7 @@
                     <!-- Columna del Mapa (ahora con imagen clicable) -->
                     <div class="contact-map">
                         <a href="https://www.google.com/maps/place/Reposter%C3%ADa+Mary/@-17.4254676,-65.7233906,17z/data=!3m1!4b1!4m6!3m5!1s0x93e49b8e436d6e27:0x65fa760b41e84398!8m2!3d-17.4254676!4d-65.7233906!16s%2Fg%2F11ypqvkzrs!5m1!1e1?hl=es-419&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                            <img src="imagenes/ubicacion.jpg" alt="Mapa de ubicación de Repostería Mary" class="map-image">
+                            <img loading="lazy" src="imagenes/ubicacion.jpg" alt="Mapa de ubicación de Repostería Mary" class="map-image">
                         </a>
                     </div>
                 </div>
@@ -680,6 +819,59 @@
             <button type="button" class="btn close-btn" id="closeModalBtn">Volver</button>
         </div>
     </div>
+
+    <!-- Modal de Video Personalizado -->
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+        <button type="button" class="video-modal-close" id="closeVideoModalBtn">&times;</button>
+        <div class="video-modal-content">
+            <video id="modalVideo" controls playsinline>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <style>
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal.open {
+            display: flex;
+        }
+        .video-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 50px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 3001;
+        }
+        .video-modal-content {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal-content video {
+            width: 100%;
+            height: 100%;
+            max-height: 90vh;
+            max-width: 900px;
+            object-fit: contain;
+        }
+    </style>
 
     <script>
         (function() {
@@ -720,7 +912,74 @@
                 }
             });
         })();
+
+        // Modal de Video Personalizado
+        (function() {
+            const videoModal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const closeVideoBtn = document.getElementById('closeVideoModalBtn');
+            const body = document.body;
+
+            // Agregar botón de expandir a cada video
+            document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+                const video = wrapper.querySelector('video');
+                const source = video.querySelector('source');
+                
+                // Crear botón de expandir
+                const expandBtn = document.createElement('button');
+                expandBtn.innerHTML = '⛶';
+                expandBtn.className = 'video-expand-btn';
+                expandBtn.title = 'Ver en pantalla completa';
+                expandBtn.style.cssText = `
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: rgba(0,0,0,0.7);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 8px 12px;
+                    font-size: 20px;
+                    cursor: pointer;
+                    z-index: 10;
+                `;
+                wrapper.appendChild(expandBtn);
+                
+                // Abrir modal al hacer clic en el botón
+                expandBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const videoSrc = source.getAttribute('src');
+                    modalVideo.querySelector('source').src = videoSrc;
+                    modalVideo.load();
+                    modalVideo.currentTime = video.currentTime; // Continuar desde donde estaba
+                    videoModal.classList.add('open');
+                    body.style.overflow = 'hidden';
+                    modalVideo.play();
+                });
+            });
+
+            // Cerrar modal
+            const closeVideoModal = () => {
+                videoModal.classList.remove('open');
+                modalVideo.pause();
+                modalVideo.querySelector('source').src = '';
+                body.style.overflow = '';
+            };
+
+            closeVideoBtn.addEventListener('click', closeVideoModal);
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && videoModal.classList.contains('open')) {
+                    closeVideoModal();
+                }
+            });
+        })();
     </script>
 
 </body>
 </html>
+

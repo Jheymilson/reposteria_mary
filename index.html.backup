@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repostería Mary - Arte y Sabor en cada Bocado</title>
+    
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- Variables de Color (Fácil Personalización) --- */
+        :root {
+            --color-primario: #d63384; /* Rosa pastel */
+            --color-secundario: #f8f9fa; /* Gris muy claro */
+            --color-texto: #333;
+            --color-texto-claro: #fff;
+            --color-acento: #ffc107; /* Amarillo dorado */
+            --navbar-height: 70px; /* Altura base de la barra fija */
+        }
+
+        /* --- Estilos Generales --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--navbar-height) + 1rem);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: #fff;
+            padding-top: var(--navbar-height);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--color-primario);
+        }
+
+        section {
+            padding: 4rem 0;
+            scroll-margin-top: calc(var(--navbar-height) + 1rem);
+        }
+
+        .anchor-target {
+            scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
+        }
+        
+        section#inicio {
+            padding: 0;
+        }
+
+        /* --- Barra de Navegación (Header) --- */
+        .navbar {
+            background: var(--color-texto-claro);
+            padding: 0.5rem 0;
+            min-height: var(--navbar-height);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: background 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%; /* Asegura que el contenedor ocupe toda la altura de la barra */
+        }
+
+        /* --- Estilos para el logo --- */
+        .navbar .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            /* ¡AJUSTE! Logo que cabe perfectamente en la barra compacta */
+            max-height: 65px; 
+            display: block;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            color: var(--color-texto);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            padding: 0 0.35rem;
+        }
+
+        .navbar nav a:hover {
+            color: var(--color-primario);
+        }
+
+        /* --- Sección de Inicio (Hero) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+            height: 100vh;
+            color: var(--color-texto-claro);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--color-primario);
+            color: var(--color-texto-claro);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #b02e6d;
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebe5d;
+        }
+
+        /* --- Sección Galería de Tortas --- */
+        .cakes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cake-card {
+            background: var(--color-texto-claro);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .cake-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .cake-card .card-content {
+            padding: 1.5rem;
+        }
+
+        .cake-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primario);
+        }
+
+        .cake-card p {
+            color: #666;
+        }
+
+        /* --- Seccion Videos --- */
+        #videos-section {
+            background: var(--color-secundario);
+        }
+
+        .section-description {
+            max-width: 720px;
+            margin: 0.5rem auto 2rem;
+            text-align: center;
+            color: #555;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: var(--color-texto-claro);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-card h3 {
+            font-size: 1.25rem;
+            color: var(--color-primario);
+        }
+
+        .video-card p {
+            color: #555;
+        }
+
+        /* --- Sección de Contacto --- */
+        #contacto {
+            background: var(--color-secundario);
+            text-align: center;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            gap: 2rem;
+            align-items: stretch;
+            margin-top: 2rem;
+        }
+
+        .contact-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            padding: 2rem;
+            background: var(--color-texto-claro);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-details h2 {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--color-primario);
+            width: 25px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: var(--color-texto);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-primario);
+        }
+
+        .contact-map {
+            flex: 1.5;
+        }
+
+        .map-image {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 2000;
+            padding: 1.5rem;
+        }
+
+        .image-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .image-modal .modal-content {
+            background: #fff;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .image-modal img {
+            width: 100%;
+            height: auto;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .map-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background: var(--color-texto);
+            color: var(--color-texto-claro);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-icons a {
+            color: var(--color-texto-claro);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--color-acento);
+        }
+
+        /* --- Responsive Design --- */
+        @media(max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .video-gallery { grid-template-columns: 1fr; }
+            
+            :root {
+                --navbar-height: 100px;
+            }
+
+            /* --- Diseño Móvil con altura controlada --- */
+            .navbar {
+                padding: 0.75rem 0;
+                min-height: var(--navbar-height);
+            }
+
+            .navbar .container { 
+                flex-direction: column; 
+                justify-content: center;
+            }
+            .navbar .logo {
+                margin-bottom: 0.5rem;
+            }
+            .navbar .logo img { 
+                max-height: 55px; /* Logo ajustado para móvil */
+            }
+            .navbar nav { 
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+                gap: 1.5rem;
+                overflow-x: auto;
+                padding: 0 0.75rem 0.6rem;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .navbar nav::-webkit-scrollbar { display: none; }
+            .navbar nav a { 
+                margin: 0;
+                font-size: 1rem;
+                padding-bottom: 0.15rem;
+                flex: 0 0 auto;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            .contact-details {
+                text-align: center;
+            }
+            .contact-details h2 {
+                text-align: center;
+            }
+            .map-image {
+                min-height: 300px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navegación -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#inicio" class="logo">
+                <img src="imagenes/logo.png" alt="Logo de Repostería Mary">
+            </a>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#matrimonio">Matrimonio</a>
+                <a href="#bautizo">Bautizo</a>
+                <a href="#videos">Videos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Inicio (Hero) -->
+        <section id="inicio" class="hero">
+            <h1>Arte y Sabor en cada Bocado</h1>
+            <p>En Repostería Mary, creamos tortas que no solo deleitan el paladar, sino que también llenan de dulzura tus momentos más especiales.</p>
+            <a href="#matrimonio" class="btn">Ver Nuestras Creaciones</a>
+        </section>
+
+        <!-- Sección Matrimonio -->
+        <section id="matrimonio-section">
+            <div class="container anchor-target" id="matrimonio">
+                <h2>Tortas para Matrimonio</h2>
+                <div class="cakes-grid">
+                    <!-- Torta 1 -->
+                    <div class="cake-card">
+                        <img src="imagenes/matrimonio/torta1.png" alt="Torta Especial 1">
+                        <div class="card-content">
+                            <h3>Nombre de la Torta 1</h3>
+                            <p>Aquí va una deliciosa descripción de tu primera torta, destacando sus ingredientes y sabor único.</p>
+                        </div>
+                    </div>
+                    <!-- Torta 2 -->
+                    <div class="cake-card">
+                        <img src="imagenes/matrimonio/torta2.jpg" alt="Torta Especial 2">
+                        <div class="card-content">
+                            <h3>Nombre de la Torta 2</h3>
+                            <p>Describe esta maravillosa creación. ¿Es de chocolate, vainilla, frutas? ¡Haz que la la gente se antoje!</p>
+                        </div>
+                    </div>
+                    <!-- Torta 3 -->
+                    <div class="cake-card">
+                        <img src="imagenes/matrimonio/torta3.jpg" alt="Torta Especial 3">
+                        <div class="card-content">
+                            <h3>Nombre de la Torta 3</h3>
+                            <p>Un espacio perfecto para contar los secretos de esta torta y por qué es una de las favoritas de tus clientes.</p>
+                        </div>
+                    </div>
+                    <!-- Torta 4 -->
+                    <div class="cake-card">
+                        <img src="imagenes/matrimonio/torta4.jpg" alt="Torta Especial 4">
+                        <div class="card-content">
+                            <h3>Nombre de la Torta 4</h3>
+                            <p>Detalla los sabores y texturas que hacen de esta torta una experiencia inolvidable.</p>
+                        </div>
+                    </div>
+                    <!-- Torta 5 -->
+                    <div class="cake-card">
+                        <img src="imagenes/matrimonio/torta5.jpg" alt="Torta Especial 5">
+                        <div class="card-content">
+                            <h3>Nombre de la Torta 5</h3>
+                            <p>¿Ideal para qué ocasión? Describe su esencia y por qué es la elección perfecta para celebrar.</p>
+                        </div>
+                    </div>
+                    <!-- Torta 6 -->
+                    <div class="cake-card">
+                        <img src="imagenes/matrimonio/torta6.jpg" alt="Torta Especial 6">
+                        <div class="card-content">
+                            <h3>Nombre de la Torta 6</h3>
+                            <p>Cierra con broche de oro describiendo esta última obra de arte de la Repostería Mary.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Bautizo -->
+        <section id="bautizo-section">
+            <div class="container anchor-target" id="bautizo">
+                <h2>Tortas para Bautizo</h2>
+                <div class="cakes-grid">
+                    <div class="cake-card">
+                        <img src="imagenes/bautizo/torta1.jpg" alt="Torta de Bautizo 1">
+                        <div class="card-content">
+                            <h3>Dulce Bautizo Clásico</h3>
+                            <p>Bizcochuelo suave relleno de crema de vainilla y frutos rojos, decorado con detalles elegantes para el gran día.</p>
+                        </div>
+                    </div>
+                    <div class="cake-card">
+                        <img src="imagenes/bautizo/torta2.jpg" alt="Torta de Bautizo 2">
+                        <div class="card-content">
+                            <h3>Celebra con Chocolate</h3>
+                            <p>Capas de chocolate belga y mousse de coco para una experiencia dulce y memorable.</p>
+                        </div>
+                    </div>
+                    <div class="cake-card">
+                        <img src="imagenes/bautizo/torta3.jpg" alt="Torta de Bautizo 3">
+                        <div class="card-content">
+                            <h3>Aroma de Citrus</h3>
+                            <p>Delicada combinación de limón y merengue italiano que encanta a pequeños y grandes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion Videos -->
+        <section id="videos-section">
+            <div class="container anchor-target" id="videos">
+                <h2>Vive la Experiencia</h2>
+                <p class="section-description">Observa c&oacute;mo cuidamos cada detalle y comparte estos clips con tus clientes antes de realizar un pedido.</p>
+                <div class="video-gallery">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="metadata">
+                                <source src="imagenes/videos/video1.mp4" type="video/mp4">
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                        </div>
+                        <h3>Decoración Artesanal</h3>
+                        <p>Una mirada al proceso de ba&ntilde;ar, rellenar y decorar cada torta con detalles hechos a mano.</p>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="metadata">
+                                <source src="imagenes/videos/video2.mp4" type="video/mp4">
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                        </div>
+                        <h3>Degustación y Entrega</h3>
+                        <p>Muestra c&oacute;mo presentamos las tortas terminadas y las entregamos listas para celebrar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <!-- Columna de Información de Contacto -->
+                    <div class="contact-details anchor-target" id="contacto">
+                        <h2>¿Listo para Endulzar tu Día?</h2>
+                        <p>Haz tu pedido o consúltanos sin compromiso. ¡Estamos para servirte!</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:+59168440488">+591 68440488</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>mluz42822@gmail.com</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/qr/EQG64RBTXXOOF1" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="align-self: flex-start;">
+                            <i class="fab fa-whatsapp"></i>
+                            Escríbenos por WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Columna del Mapa (ahora con imagen clicable) -->
+                    <div class="contact-map">
+                        <a href="https://www.google.com/maps/place/Reposter%C3%ADa+Mary/@-17.4254676,-65.7233906,17z/data=!3m1!4b1!4m6!3m5!1s0x93e49b8e436d6e27:0x65fa760b41e84398!8m2!3d-17.4254676!4d-65.7233906!16s%2Fg%2F11ypqvkzrs!5m1!1e1?hl=es-419&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                            <img src="imagenes/ubicacion.jpg" alt="Mapa de ubicación de Repostería Mary" class="map-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2024 Repostería Mary. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para imágenes -->
+    <div class="image-modal" id="imageModal" aria-hidden="true">
+        <div class="modal-content">
+            <img src="" alt="Vista ampliada de torta">
+            <button type="button" class="btn close-btn" id="closeModalBtn">Volver</button>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = modal.querySelector('img');
+            const closeBtn = document.getElementById('closeModalBtn');
+            const body = document.body;
+
+            const openModal = (src, alt) => {
+                modalImg.src = src;
+                modalImg.alt = alt || 'Vista ampliada de torta';
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                body.style.overflow = 'hidden';
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                modalImg.src = '';
+                modalImg.alt = '';
+                body.style.overflow = '';
+            };
+
+            document.querySelectorAll('.cake-card img').forEach(img => {
+                img.addEventListener('click', () => openModal(img.src, img.alt));
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', event => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && modal.classList.contains('open')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
